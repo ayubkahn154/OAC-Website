@@ -1,0 +1,384 @@
+@import 'helpers', 'colors', 'header', 'sidebar', 'admin', 'modal', 'events', 'organizations', 'developer', 'footer';
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+body {
+  background: lightgray;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+h2, h3 {
+  margin: 0.25em 0;
+}
+
+iframe#userDashMap {
+  border-left: none;
+  border-top: 0.25rem solid $primary;
+  @media screen and (min-width: 1366px) {
+    border-top: none;
+    border-left: 0.25rem solid $primary;
+  }
+}
+
+main {
+  @media screen and (min-width: 1366px) {
+    margin: 2rem;
+  }
+  @include box-shadow(2, black);
+  align-items: center;
+  background-color: $white;
+  flex: 1 0 auto;
+  padding: 1rem;
+  #myBtn {
+    @include box-shadow(3, black);
+    display: none;
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    z-index: 99;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: lighten($text, 20%);
+    color: white;
+    cursor: pointer;
+    padding: 1.2rem;
+    border-radius: 50%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    i {
+      color: $white;
+      font-size: 1rem;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      background-color: darken($text, 10%);
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+
+  }
+
+}
+
+form {
+  align-self: center;
+  font-size: 1.12rem;
+  width: 100%;
+  @media screen and (min-width: 1023px) {
+    width: 70%;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    width: 90%;
+  }
+}
+
+.formInput {
+  display: table-row;
+}
+
+.checkbox-group {
+  background: $primary;
+  padding: 1rem;
+  color: white;
+  border-radius: 5px;
+}
+
+.multi-column {
+  @media screen and (min-width: 1023px) {
+    display: flex;
+    flex-flow: row wrap;
+    .checkbox-item {
+      width: 45%;
+    }
+  }
+}
+
+.overflow-buffer {
+  overflow: auto;
+}
+
+.icon-button {
+  i {
+    color: $primary;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+fieldset {
+  border: 2px solid $primary;
+  display: table;
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  input, textarea, select {
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    display: table-cell;
+    font-size: 1.12rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem auto;
+    width: 100%;
+  }
+
+  label {
+    display: table-cell;
+  }
+
+  legend {
+    background-color: $primary;
+    color: white;
+  }
+
+  table {
+    width: 100%;
+
+    .remove {
+      @include box-shadow(1, black);
+      background: $primary;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+
+    .add {
+      @include box-shadow(1, black);
+      background: forestgreen;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  align-self: center;
+}
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+input[type=submit], input[type=reset], input[type=button], a.button {
+  @include box-shadow(1, $primary);
+
+  text-align: center;
+  background-color: $primary;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $white;
+  display: inline-block;
+  font-size: 1.05rem;
+  padding: .5rem 2rem;
+  text-decoration: none;
+  -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  -moz-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  -ms-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  -o-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  width: auto;
+
+  &:hover {
+    @include box-shadow(2, $primary);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+}
+
+table tr td > input[type=button], table tr td > a.button {
+  width: 95%;
+  margin: 0 5%;
+  text-align: center;
+}
+
+tr, th, td {
+  min-width: 5rem;
+}
+
+table.table-separators {
+  th, td {
+    border-bottom: 1px solid $primary;
+    padding: 0.25rem 0;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+table.red-header {
+  th {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+iframe#contactMap {
+  display: block;
+  height: 50%;
+  width: 100%;
+  @media screen and (min-width: 1023px) {
+    display: inline;
+    float: right;
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 115%;
+  font-style: italic;
+  text-decoration: none;
+  line-height: 1.7;
+
+}
+
+#slogan {
+  font-weight: bold;
+  font-size: 120%;
+  font-style: italic;
+  text-align: center;
+
+}

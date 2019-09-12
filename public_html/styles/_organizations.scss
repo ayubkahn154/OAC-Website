@@ -1,0 +1,75 @@
+.grid-container-organization {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 1rem;
+  grid-template-areas:
+          "orgInfo"
+          "orgMap"
+          "irccServices"
+          "nonIrccServices"
+;
+}
+
+@media screen and (min-width: 1023px) {
+  .grid-container-organization {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    grid-gap: 1rem;
+    grid-template-areas: "orgInfo orgMap" "irccServices nonIrccServices";
+  }
+}
+
+.irccServices {
+  grid-area: irccServices;
+}
+
+.nonIrccServices {
+  grid-area: nonIrccServices;
+}
+
+.orgInfo {
+  grid-area: orgInfo;
+}
+
+.orgMap {
+  grid-area: orgMap;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: 0.25fr 0.75fr 1fr;
+  }
+
+  .irccServices {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .nonIrccServices {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  .orgInfo {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .orgMap {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+}

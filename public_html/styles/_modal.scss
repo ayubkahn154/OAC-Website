@@ -1,0 +1,106 @@
+#modal #modalBox #modalContent.grid-container-modal {
+  display: grid;
+  height: 100%;
+  padding: 1rem;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+          "dateTimes"
+          "description"
+          "address"
+          "contact"
+          "services"
+          "targets";
+
+  h3 {
+    border-bottom: 2px solid $primary;
+    font-weight: 500;
+  }
+  table {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  #modal #modalBox #modalContent.grid-container-modal {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+            "dateTimes description"
+            "address contact"
+            "services targets";
+  }
+}
+
+@media all and (min-width: 1400px) {
+  #modal #modalBox #modalContent.grid-container-modal {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+            "dateTimes description contact"
+            "address services targets";
+  }
+}
+
+#dateTimesBox { grid-area: dateTimes; }
+
+#servicesBox { grid-area: services; }
+
+#targetsBox { grid-area: targets; }
+
+#descriptionBox { grid-area: description; }
+
+#addressBox { grid-area: address; }
+
+#contactBox { grid-area: contact; }
+
+@media all and (-ms-high-contrast: none) {
+  #modal #modalBox #modalContent.grid-container-modal {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+  }
+
+  #dateTimesBox {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  #servicesBox {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  #targetsBox {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
+
+  #descriptionBox {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  #addressBox {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  #contactBox {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
+}

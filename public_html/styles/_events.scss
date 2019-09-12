@@ -1,0 +1,155 @@
+@import "_colors", "_helpers";
+
+div#eventsTable {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+
+  .brown {
+    background-color: darken($secondary, 30%);
+  }
+
+  .maroon {
+    background-color: $primary;
+  }
+
+  div.stream {
+    align-items: center;
+    display: flex;
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+
+    span {
+      background: white;
+      border: solid 1px $secondary;
+      color: $primary;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.25rem 1rem;
+    }
+  }
+
+  div.eventRow {
+    align-items: baseline;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    @include box-shadow(1, black);
+
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    width: 100%;
+
+    div.info {
+      flex: 1 1 auto;
+    }
+
+    div.categoryBox {
+      font-size: small;
+      text-transform: uppercase;
+
+      span {
+        background: white;
+        border-radius: 50px;
+        color: $primary;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}
+
+#modal {
+  align-items: center;
+  background-color: rgba(65,65,65,0.7);
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  #modalBox {
+    //background-color: antiquewhite;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    overflow: auto;
+
+    #modalTitleBar {
+      background: $text;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: $off_white;
+      display: flex;
+      flex-flow: row wrap;
+      padding: 1rem;
+
+      #topBar {
+        align-items: baseline;
+        color: darkgray;
+        display:flex;
+        flex-flow: row nowrap;
+        font-size: small;
+        text-transform: uppercase;
+        width: 100%;
+
+        #streamTitle {
+          flex: 1 1 auto;
+        }
+
+        #modalCloseButton {
+          cursor: pointer;
+          flex: 0 0 auto;
+          font-size: 1.5rem;
+          line-height: 0.8;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #modal {
+    #modalBox {
+      border-radius: 0;
+      display: block;
+      width: 80%;
+      height: 80%;
+
+      #modalTitleBar {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #modal {
+    #modalBox {
+      border-radius: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      #modalTitleBar {
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.adminPanel {
+  .sidebarView {
+    .sidebar {
+      ul {
+        font-weight: 500;
+        list-style: none;
+        padding: 0;
+
+        li {
+          padding: 1rem;
+          margin: 0.5rem;
+          background: $text;
+          color: $white;
+          cursor: pointer;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          -ms-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s;
+          text-align: center;
+          font-size: large;
+          border-radius: 5px;
+
+          &.selected {
+            background: $primary;
+          }
+
+          &:hover {
+            background: darken($primary, 20%);
+          }
+        }
+      }
+    }
+
+    .main {
+      width: 85%;
+      section {
+        padding: 0 1rem;
+        -webkit-transition: all 0.75s;
+        -moz-transition: all 0.75s;
+        -ms-transition: all 0.75s;
+        -o-transition: all 0.75s;
+        transition: all 0.75s;
+        display: none;
+
+        &.selected {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@import "_helpers", "_colors";
+
+html, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+}
+
+main {
+  //background: lighten($primary, 65%);
+  background-image: url("../assets/login-background.jpeg");
+  //background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+
+  @media screen and (min-width: 767px) {
+
+
+  }
+
+  div#loginBox {
+    //@include box-shadow(3, $primary);
+    align-items: center;
+    background: rgba(255, 194, 101, 0.7);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 2rem;
+    height: 100%;
+    width: 100%;
+
+    a {
+      align-self: flex-start;
+      background-color: $primary;
+      border-radius: 3px;
+      color: $white;
+      padding: 0.75rem;
+      text-decoration: none;
+    }
+
+    h1 {
+      // TODO: Add your font family and font size etc
+      font-size: 4em;
+      font-weight: 300;
+      text-shadow: 2px 1px 3px gray;
+    }
+
+    form#loginForm {
+      width: 80%;
+      label {
+        color: $primary;
+        text-transform: uppercase;
+      }
+      input {
+        border: 2px solid black;
+        font-size: 1.1rem;
+        margin: 0 0.25rem 1rem 0;
+        padding: 0.5rem 0;
+        width: 100%;
+        text-indent: 0.5rem;
+      }
+
+      div#actionButtons {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: auto;
+
+        input {
+          @include box-shadow(1, black);
+          border: 0;
+          border-radius: 3px;
+          background-color: $primary;
+          color: $white;
+          margin: 0;
+          padding: 1rem 0;
+          text-indent: 0;
+          text-transform: uppercase;
+          -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          -moz-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          -ms-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          -o-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+          &:hover {
+            @include box-shadow(3, black);
+            background-color: $secondary;
+            cursor: pointer;
+            -webkit-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablets and up
+@media all and (min-width: 767px) {
+  main {
+    height: 100vh;
+    align-content: center;
+    align-items: center;
+    div#loginBox {
+      box-shadow: 0 0 1rem rgba($primary,0.19), 0 0.5rem 1rem rgba($primary,0.23);
+      -moz-box-shadow: 0 0 1rem rgba($primary,0.19), 0 0.5rem 1rem rgba($primary,0.23);
+      -webkit-box-shadow: 0 0 1rem rgba($primary,0.19), 0 0.5rem 1rem rgba($primary,0.23);
+      height: 40%;
+      width: 40%;
+
+      form#loginForm {
+        input {
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}
+
+// Desktops and up
+@media all and (min-width: 1279px) {
+
+}

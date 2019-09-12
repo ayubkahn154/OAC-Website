@@ -1,0 +1,31 @@
+@import "_colors";
+
+footer {
+  background-color: $text;
+  color: $white;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+
+  a {
+    background-color: $primary;
+    color: $white;
+    padding: 0.15rem 0.25rem;
+    text-decoration: none;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $secondary;
+      text-decoration: none;
+    }
+  }
+
+  #google_translate_element {
+    a {
+      background-color: #ffffff;
+    }
+  }
+
+}
